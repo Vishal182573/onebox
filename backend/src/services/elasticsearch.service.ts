@@ -7,9 +7,22 @@ class ElasticsearchService {
   private client: Client;
 
   private constructor() {
-    this.client = new Client({
-      node: process.env.ELASTICSEARCH_NODE || 'http://localhost:9200',
-    });
+    if (process.env.ELASTIC_CLOUD_ID && process.env.ELASTIC_API_KEY) {
+      console.log("Connecting to Elastic Cloud...");
+      this.client = new Client({
+        cloud: {
+          id: process.env.ELASTIC_CLOUD_ID,
+        },
+        auth: {
+          apiKey: process.env.ELASTIC_API_KEY,
+        },
+      });
+    } else {
+      console.log("Connecting to local Elasticsearch instance...");
+      this.client = new Client({
+        node: process.env.ELASTICSEARCH_NODE || 'http://localhost:9200',
+      });
+    }
   }
   public static getInstance(): ElasticsearchService {
     if (!ElasticsearchService.instance) {
