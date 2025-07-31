@@ -5,7 +5,7 @@ Here is the raw Markdown code for the README file. You can copy and paste this d
 
 Onebox is a feature-rich, full-stack application designed to synchronize multiple IMAP email accounts into a single, searchable interface. It leverages real-time connections, AI for email categorization, and a Retrieval-Augmented Generation (RAG) model to provide intelligent reply suggestions.
 
-**[Link to Demo Video]**
+**https://drive.google.com/file/d/13bl9-f3_9deMvvf7I-OVTRYoj2RqNM6f/view?usp=drive_link**
 
 ---
 
